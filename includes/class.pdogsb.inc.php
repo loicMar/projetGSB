@@ -570,7 +570,7 @@ class PdoGsb
     public function majEtatFicheFrais($idVisiteur, $mois, $etat)
     {
         $requetePrepare = PdoGSB::$monPdo->prepare(
-            'UPDATE ficheFrais '
+            'UPDATE fichefrais '
             . 'SET idetat = :unEtat, datemodif = now() '
             . 'WHERE fichefrais.idvisiteur = :unIdVisiteur '
             . 'AND fichefrais.mois = :unMois'
@@ -592,7 +592,7 @@ class PdoGsb
     public function majDateFicheFrais($idVisiteur, $mois)
     {
         $requetePrepare = PdoGSB::$monPdo->prepare(
-            'UPDATE ficheFrais '
+            'UPDATE fichefrais '
             . 'SET  datemodif = now() '
             . 'WHERE fichefrais.idvisiteur = :unIdVisiteur '
             . 'AND fichefrais.mois = :unMois'
@@ -693,6 +693,65 @@ class PdoGsb
         );
         $requetePrepare->execute();
         return $requetePrepare->fetchAll();
+    }
+
+
+     /**
+     * Retourne le montant toal de la fiche frais
+     *
+     * @param String $idVisiteur ID du visiteur
+     * @param String $mois       Mois sous la forme aaaamm
+     *
+     * @return un tableau avec des champs de jointure entre une fiche de frais
+     *         et la ligne d'état
+     */
+    public function calculerFicheFrais($idVisiteur, $mois )
+    {
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+           'SELECT SUM(montantForfaitVue.montantForfait) as montantTotal
+           FROM
+           (SELECT SUM(fraisforfait.montant * lignefraisforfait.quantite) as montantForfait
+            FROM lignefraisforfait INNER JOIN fraisforfait ON lignefraisforfait.idfraisforfait = fraisforfait.id
+            WHERE lignefraisforfait.idvisiteur = :unIdVisiteur and lignefraisforfait.mois = :unMois
+            UNION
+            SELECT SUM(lignefraishorsforfait.montant) as montantForfait
+            FROM lignefraishorsforfait
+            WHERE lignefraishorsforfait.idvisiteur = :unIdVisiteur and lignefraishorsforfait.mois = :unMois ) as montantForfaitVue'
+        );
+        $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        $laLigne = $requetePrepare->fetch();
+        return $laLigne;
+    }
+
+
+     /**
+     * Modifie l'état, le montant et la date de modification d'une fiche de frais.
+     * Modifie le champ idEtat et met la date de modif à aujourd'hui.
+     *
+     * @param String $idVisiteur ID du visiteur
+     * @param String $mois       Mois sous la forme aaaamm
+     * @param String $etat       Nouvel état de la fiche de frais
+     * @param String $montant    montant de la fiche 
+     *
+     * @return null
+     */
+    public function majMontantFicheFrais($idVisiteur, $mois, $etat, $montant)
+    {
+       
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+            'UPDATE fichefrais '
+            . 'SET idetat = :unEtat, datemodif = now(), montantvalide = :unMontant  '
+            . 'WHERE fichefrais.idvisiteur = :unIdVisiteur '
+            . 'AND fichefrais.mois = :unMois'
+        );
+        $requetePrepare->bindParam(':unEtat', $etat, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unMontant', $montant, PDO::PARAM_STR);        
+        $requetePrepare->execute();
+
     }
    
 }

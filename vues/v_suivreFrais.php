@@ -74,10 +74,11 @@
         </table>
     </div>
 
-    <form action="index.php?uc=validerFrais&action=validerFiche" method="post" role="form">
+    <form action="index.php?uc=suivreFrais&action=misePaiementFrais" method="post" role="form">
             <input id="lstVisiteurs" name="lstVisiteurs" type="hidden" value='<?php echo  $idVisiteur ?>' >
             <input id="lstMois" name="lstMois" type="hidden" value='<?php echo  $leMois ?>' >
-            <input id="valider" type="submit" value="Valider Fiche" class="btn btn-success" role="button">
+            <input id="montant" name="montant" type="hidden" value='<?php echo $montantValide ?>' >
+            <input id="valider" type="submit" value="Mise En Paiement" class="btn btn-warning" role="button">
    </form>
 <?php } else { ?>
     Pas de fiche de frais pour ce mois et ce visiteur

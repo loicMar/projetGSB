@@ -68,7 +68,7 @@
                             <?php
                             if ($_SESSION['role'] == "COM"){ ?>
                                 <li <?php if ($uc == 'validerfrais') { ?>class="active"<?php } ?>>
-                                    <a href="index.php?uc=validerfrais&action=selectionnerMoisVisiteur">
+                                    <a href="index.php?uc=validerFrais&action=selectionnerMoisVisiteur">
                                         <span class="glyphicon glyphicon-pencil"></span>
                                         Valider Fiche de frais
                                     </a>

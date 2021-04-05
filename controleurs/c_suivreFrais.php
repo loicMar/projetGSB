@@ -17,6 +17,13 @@
 $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
 
 switch ($action) {
+case 'misePaiementFrais':
+    // Récupération du formulaire
+    $leMois = filter_input(INPUT_POST, 'lstMois', FILTER_SANITIZE_STRING);
+    $idVisiteur = filter_input(INPUT_POST, 'lstVisiteurs', FILTER_SANITIZE_STRING);
+    $montant = filter_input(INPUT_POST, 'montant', FILTER_SANITIZE_STRING);
+    $pdo->majMontantFicheFrais($idVisiteur, $leMois, "RB" , $montant);
+    
 case 'listeFrais':
 $visiteurs = $pdo->getListVisiteur();
 // Afin de sélectionner par défaut le premier visiteur dans la zone de liste
@@ -25,7 +32,7 @@ $lesClesVisi = array_keys($visiteurs);
 if(array_key_exists(0,  $visiteurs)){
     $visiASelectionner =  $lesClesVisi[0];
 }
-$lesMois = $pdo->getLesMois();
+$lesMois = $pdo->getLesMois("VA");
 // Afin de sélectionner par défaut le dernier mois dans la zone de liste
 // on demande toutes les clés, et on prend la première,
 // les mois étant triés décroissants
@@ -54,10 +61,14 @@ case 'etatFrais':
     $lesFraisForfait = $pdo->getLesFraisForfait($idVisiteur, $leMois);
     $lesInfosFicheFrais = $pdo->getLesInfosFicheFraisStatus($idVisiteur, $leMois, "VA");
 
-    // vérification quu'une fiche et une fiche de frais exist
+    // vérification quu'une fiche et une fiche de frais exist net calcul du mointant total de la fiche
     if (count($lesInfosFicheFrais) == 1){
+
+        $montantValide = $lesInfosFicheFrais['montantValide'];
         $boolFicheDeFrais = false;
     } else {
+        $fraisCalculer = $pdo->calculerFicheFrais($idVisiteur, $leMois);
+        $montantValide = $fraisCalculer[0];
         $boolFicheDeFrais = true;
     }
 
@@ -65,15 +76,16 @@ case 'etatFrais':
     $numAnnee = substr($leMois, 0, 4);
     $numMois = substr($leMois, 4, 2);
     $libEtat = $lesInfosFicheFrais['libEtat'];
-    $montantValide = $lesInfosFicheFrais['montantValide'];
     $nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
     $dateModif = dateAnglaisVersFrancais($lesInfosFicheFrais['dateModif']);
 
     include 'vues/v_selectionMoisVisiteur.php';
-    include 'vues/v_validerFrais.php';
+    include 'vues/v_suivreFrais.php';
     break;
      
-case 'misePaiementFrais':
+
+
+
   
 
 }
