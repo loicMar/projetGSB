@@ -33,7 +33,7 @@ if ($uc && !$estConnecte) {
 if ($estConnecte) {
     
     // Lors de la connexion d'un Medecin
-    if ($_SESSION['role'] == "VIS"){
+    if ($_SESSION['role'] == "MED"){
         switch ($uc) {
             case 'accueil':
                 include 'controleurs/c_accueil.php';
