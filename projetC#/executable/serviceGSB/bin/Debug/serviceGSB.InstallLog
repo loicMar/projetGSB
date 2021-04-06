@@ -1,0 +1,45 @@
+﻿Installation de l'assembly 'C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.InstallLog
+   assemblypath = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe
+Installation du service ServiceGsb en cours...
+Création d'une source EventLog ServiceGsb dans le journal Application...
+Restauration de l'assembly 'C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.InstallLog
+   assemblypath = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe
+Restauration de l'état précédent du journal des événements pour la source ServiceGsb.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security, State.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
+Installation de l'assembly 'C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.InstallLog
+   assemblypath = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe
+Installation du service ServiceGsb en cours...
+Création d'une source EventLog ServiceGsb dans le journal Application...
+Restauration de l'assembly 'C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.InstallLog
+   assemblypath = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe
+Restauration de l'état précédent du journal des événements pour la source ServiceGsb.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security, State.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
+Installation de l'assembly 'C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.InstallLog
+   assemblypath = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe
+Installation du service ServiceGsb en cours...
+Le service ServiceGsb a été installé avec succès.
+Création d'une source EventLog ServiceGsb dans le journal Application...
+Validation de l'assembly 'C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.InstallLog
+   assemblypath = C:\Users\flore\source\repos\projetGSB_AppliFrais\serviceGSB\bin\Debug\serviceGSB.exe
