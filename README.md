@@ -7,7 +7,7 @@ Contexte Applicatif et la situation professionnelle :
   - documentation/ContexteGSB-2018vOri -> Les documents fournis en entrant
 
 
-Métthodologie :
+Méthodologie :
   - documentation/Loic Martin _ PPE_ GSB_ Méthode et tests - Année 2020-2021 - Copie
   - documentation/Loic Martin-demarcheDev
 
