@@ -18,6 +18,8 @@ Productions :
   
   Mission 2 : "dossier projetC#" Développement de la partie comptable (voir documentation/Loic Martin-demarcheDev pour plus de détail mission)
     T2 - Coder la page de suivi de paiement en respectant le cas d’utilisation "Suivre le paiement fiche de frais".
+    
+  -SQL La base source
 
  
 
