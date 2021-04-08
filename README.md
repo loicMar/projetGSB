@@ -8,8 +8,8 @@ Contexte Applicatif et la situation professionnelle :
 
 
 Méthodologie :
-  - documentation/Loic Martin _ PPE_ GSB_ Méthode et tests - Année 2020-2021 - Copie
-  - documentation/Loic Martin-demarcheDev
+  - documentation/Loic Martin _ PPE_ Tests_V1.5
+  - documentation/LoicMartin-demarcheDev_V2.2
 
 Productions :
 
